@@ -1,17 +1,17 @@
 package com.example.demo.model;
 
-public class Player {
+public class FirstPlayer {
     private String name;
 
-    public Player(String name) {
+    public FirstPlayer(String name) {
         this.name = name;
     }
 
-    public String getName() {
+    public String getFirstName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setFirstName(String name) {
         this.name = name;
     }
 }

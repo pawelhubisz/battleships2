@@ -1,15 +1,15 @@
 package com.example.demo.model;
 
-import com.example.demo.enums.ShipPlaceStatus;
 import com.example.demo.enums.Status;
 
 public class GameAdmin {
 
-    private Battlefield battlefield;
-    private Player player;
+    private FirstBattlefield firstBattlefield;
+    private FirstPlayer firstPlayer;
+    private SecondPlayer secondPlayer;
 
     public GameAdmin() {
-        battlefield = new Battlefield();
+        firstBattlefield = new FirstBattlefield();
     }
 
     @Override
@@ -17,12 +17,12 @@ public class GameAdmin {
         return "GameAdmin{}";
     }
 
-    public Battlefield getBattlefield() {
-        return battlefield;
+    public FirstBattlefield getBattlefield() {
+        return firstBattlefield;
     }
 
-    public void setBattlefield(Battlefield battlefield) {
-        this.battlefield = battlefield;
+    public void setBattlefield(FirstBattlefield firstBattlefield) {
+        this.firstBattlefield = firstBattlefield;
     }
 
     public int getBattlefieldSize() {
@@ -30,18 +30,24 @@ public class GameAdmin {
 
     }
 
-    public Player getPlayer() {
-        return player;
+    public FirstPlayer getFirstPlayer() {
+        return firstPlayer;
+    }
+    public SecondPlayer getSecondPlayer() {
+        return secondPlayer;
     }
 
-    public void setPlayer(Player player) {
-        this.player = player;
+    public void setFirstPlayer(FirstPlayer firstPlayer) {
+        this.firstPlayer = firstPlayer;
+    }
+    public void setSecondPlayer(SecondPlayer secondPlayer) {
+        this.secondPlayer = secondPlayer;
     }
 
     public Status shoot(String playerName, int x, int y) {
-        return battlefield.shoot(x, y);
+        return firstBattlefield.shoot(x, y);
     }
     public Status placeShip(String playerName, int x, int y) {
-        return battlefield.placeShip(x, y);
+        return firstBattlefield.placeShip(x, y);
     }
 }

@@ -1,18 +1,17 @@
 package com.example.demo.model;
 
-import com.example.demo.enums.ShipPlaceStatus;
 import com.example.demo.enums.Status;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Battlefield {
+public class SecondBattlefield {
 
     private List<Field> fieldList;
     private static final int ROWS = 3;
     private static final int COLUMNS = 3;
 
-    public Battlefield() {
+    public SecondBattlefield() {
     }
 
     public List<Field> getFieldList() {
