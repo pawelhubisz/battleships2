@@ -32,16 +32,16 @@ public class GameController {
     @GetMapping("/shoot")
     public String shoot(String playerName, int x, int y) {
         if (checkIfPlayerNameAlreadyExists(playerName)) {
-            return "wrong name";
+            return gameAdmin.shoot(playerName, x, y).toString();
         }
-        return gameAdmin.shoot(playerName, x, y).toString();
+        return "wrong name";
     }
     @GetMapping("/ship")
     public String placedShip(String playerName, int x, int y) {
         if (checkIfPlayerNameAlreadyExists(playerName)) {
-            return "wrong name";
+            return gameAdmin.placeShip(playerName, x, y).toString();
         }
-        return gameAdmin.placeShip(playerName, x, y).toString();
+        return "wrong name";
     }
 
     public GameAdmin getGameAdmin() {
