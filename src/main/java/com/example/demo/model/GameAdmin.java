@@ -4,12 +4,13 @@ import com.example.demo.enums.Status;
 
 public class GameAdmin {
 
-    private Battlefield battlefield;
-    private Player secondPlayer;
-    private Player firstPlayer;
+    private Battlefield firstBattlefield;
+    private Battlefield secondBattlefield;
 
     public GameAdmin() {
-        battlefield = new Battlefield();
+        //TODO przenieść tworzenie Battlefield do GameService - do metody prepareGame (utwórz getter i setter dla obu i potem w GameService.prepare game "gameAdmin.setFirstBattlefield")
+        //firstBattlefield = new Battlefield();
+        //firstBattlefield = new Battlefield();
     }
 
     @Override
@@ -17,45 +18,15 @@ public class GameAdmin {
         return "GameAdmin{}";
     }
 
-    public Battlefield getBattlefield() {
-        return battlefield;
-    }
-
-    public void setBattlefield(Battlefield battlefield) {
-        this.battlefield = battlefield;
-    }
-
-    public int getBattlefieldSize() {
-        return this.getBattlefield().getFieldList().size();
-
-    }
-
-    public Player getSecondPlayer() {
-        return secondPlayer;
-    }
-
-    public void setSecondPlayer(Player secondPlayer) {
-        this.secondPlayer = secondPlayer;
-    }
-
-    public Player getFirstPlayer() {
-        return firstPlayer;
-    }
-
-    public void setFirstPlayer(Player firstPlayer) {
-        this.firstPlayer = firstPlayer;
-    }
-    public void setPlayers(Player firstPlayer, Player secondPlayer) {
-        setFirstPlayer(firstPlayer);
-        setSecondPlayer(secondPlayer);
-    }
-
-
 
     public Status shoot(String playerName, int x, int y) {
-        return battlefield.shoot(x, y);
+        //TODO sprawdź w którym battlefield jest Player o takim playerName i dla tego battlefield wywołaj shoot (obsłuż sytuację jak playera nie ma)
+      //  return battlefield.shoot(x, y);
+        return null;
     }
     public Status placeShip(String playerName, int x, int y) {
-        return battlefield.placeShip(x, y);
+        //TODO sprawdź w którym battlefield jest Player o takim playerName i dla tego battlefield wywołaj placeShip (obsłuż sytuację jak playera nie ma)
+        //return battlefield.placeShip(x, y);
+        return null;
     }
 }

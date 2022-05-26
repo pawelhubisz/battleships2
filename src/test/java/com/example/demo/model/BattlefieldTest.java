@@ -13,8 +13,8 @@ class BattlefieldTest {
 
     @BeforeEach
     public void setUp() {
-        battlefield = new Battlefield();
-        battlefield.createFieldList();
+        //battlefield = new Battlefield();
+        //battlefield.createFieldList();
     }
 
 
