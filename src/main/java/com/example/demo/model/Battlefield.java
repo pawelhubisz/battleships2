@@ -5,13 +5,13 @@ import com.example.demo.enums.Status;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SecondBattlefield {
+public class Battlefield {
 
     private List<Field> fieldList;
     private static final int ROWS = 3;
     private static final int COLUMNS = 3;
 
-    public SecondBattlefield() {
+    public Battlefield() {
     }
 
     public List<Field> getFieldList() {

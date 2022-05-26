@@ -4,12 +4,12 @@ import com.example.demo.enums.Status;
 
 public class GameAdmin {
 
-    private FirstBattlefield firstBattlefield;
-    private FirstPlayer firstPlayer;
-    private SecondPlayer secondPlayer;
+    private Battlefield battlefield;
+    private Player secondPlayer;
+    private Player firstPlayer;
 
     public GameAdmin() {
-        firstBattlefield = new FirstBattlefield();
+        battlefield = new Battlefield();
     }
 
     @Override
@@ -17,12 +17,12 @@ public class GameAdmin {
         return "GameAdmin{}";
     }
 
-    public FirstBattlefield getBattlefield() {
-        return firstBattlefield;
+    public Battlefield getBattlefield() {
+        return battlefield;
     }
 
-    public void setBattlefield(FirstBattlefield firstBattlefield) {
-        this.firstBattlefield = firstBattlefield;
+    public void setBattlefield(Battlefield battlefield) {
+        this.battlefield = battlefield;
     }
 
     public int getBattlefieldSize() {
@@ -30,24 +30,32 @@ public class GameAdmin {
 
     }
 
-    public FirstPlayer getFirstPlayer() {
-        return firstPlayer;
-    }
-    public SecondPlayer getSecondPlayer() {
+    public Player getSecondPlayer() {
         return secondPlayer;
     }
 
-    public void setFirstPlayer(FirstPlayer firstPlayer) {
-        this.firstPlayer = firstPlayer;
-    }
-    public void setSecondPlayer(SecondPlayer secondPlayer) {
+    public void setSecondPlayer(Player secondPlayer) {
         this.secondPlayer = secondPlayer;
     }
 
+    public Player getFirstPlayer() {
+        return firstPlayer;
+    }
+
+    public void setFirstPlayer(Player firstPlayer) {
+        this.firstPlayer = firstPlayer;
+    }
+    public void setPlayers(Player firstPlayer, Player secondPlayer) {
+        setFirstPlayer(firstPlayer);
+        setSecondPlayer(secondPlayer);
+    }
+
+
+
     public Status shoot(String playerName, int x, int y) {
-        return firstBattlefield.shoot(x, y);
+        return battlefield.shoot(x, y);
     }
     public Status placeShip(String playerName, int x, int y) {
-        return firstBattlefield.placeShip(x, y);
+        return battlefield.placeShip(x, y);
     }
 }
