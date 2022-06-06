@@ -56,11 +56,4 @@ public class GameController {
         //TODO zmień HttpStatus.OK na coś innego (np. HttpStatus.BAD_REQUEST) i sprawdź co pokazuje Postman - tak samo dla innych wartości
         return new ResponseEntity(body, HttpStatus.OK);
     }
-
-
-    //TODO metoda do wywalenia z tej klasy i przeniesienia dl GameService
-    public boolean checkIfPlayerNameAlreadyExists(String posPlayerName) {
-        // return posPlayerName == null || posPlayerName.equals(gameAdmin.getFirstPlayer().getName()) || posPlayerName.equals(gameAdmin.getSecondPlayer().getName());
-        return false;
-    }
 }
