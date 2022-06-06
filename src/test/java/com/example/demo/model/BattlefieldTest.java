@@ -13,8 +13,8 @@ class BattlefieldTest {
 
     @BeforeEach
     public void setUp() {
-        //battlefield = new Battlefield();
-        //battlefield.createFieldList();
+        battlefield = new Battlefield(new Player("playerName"));
+        // battlefield.createFieldList();
     }
 
 
@@ -43,14 +43,14 @@ class BattlefieldTest {
     }
 
     private Field getFieldsByCoordinates(int x, int y) {
-     for(Field field: battlefield.getFieldList()){
+        for (Field field : battlefield.getFieldList()) {
 
-         if(field.checkIfCoordinatesEquals(x, y)){
-             return field;
-         }
-     }
+            if (field.checkIfCoordinatesEquals(x, y)) {
+                return field;
+            }
+        }
         return null;
-     //1,2,3,4,5,6,7,8,9
+        //1,2,3,4,5,6,7,8,9
     }
 
     @Test
@@ -71,7 +71,7 @@ class BattlefieldTest {
     void placeShipShouldReturnWrongCoordinates() {
         Status output = battlefield.placeShip(1, 39);
         assertEquals(Status.WRONG_COORDINATES, output);
-        assertNull(getFieldsByCoordinates(1,39));
+        assertNull(getFieldsByCoordinates(1, 39));
     }
 
     @Test
@@ -85,5 +85,21 @@ class BattlefieldTest {
         battlefield.placeShip(1, 3);
         Status output = battlefield.placeShip(1, 3);
         assertEquals(Status.CANT_PLACE_SHIP, output);
+    }
+
+    @Test
+    void equalsPlayerNameShouldReturnFalse() {
+        boolean output = battlefield.equalsPlayerName("not existing player name");
+        assertFalse(output);
+    }
+    @Test
+    void equalsPlayerNameShouldReturnTrue() {
+        boolean output = battlefield.equalsPlayerName("playerName");
+        assertTrue(output);
+    }
+    @Test
+    void equalsPlayerNameShouldReturnFalsePlayerNameNull() {
+        boolean output = battlefield.equalsPlayerName(null);
+        assertFalse(output);
     }
 }

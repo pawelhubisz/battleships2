@@ -30,7 +30,7 @@ public class Battlefield {
     }
 
 
-    private void createFieldList() {
+    public void createFieldList() {
         fieldList = new ArrayList<>();
         for (int i = 1; i < ROWS + 1; i++) {
             for (int j = 1; j < COLUMNS + 1; j++) {
@@ -68,5 +68,8 @@ public class Battlefield {
             }
         }
         return Status.WRONG_COORDINATES;
+    }
+    public boolean equalsPlayerName(String playerName){
+      return playerName!=null&&playerName.equals(getPlayer().getName());
     }
 }

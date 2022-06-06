@@ -22,10 +22,12 @@ public class GameService {
 
 
     public GameAdmin prepareGame(String firstPlayerName, String secondPlayerName) {
+        gameAdmin=new GameAdmin();
         gameAdmin.setFirstBattlefield(new Battlefield(new Player(firstPlayerName)));
         gameAdmin.setSecondBattlefield(new Battlefield(new Player(secondPlayerName)));
-        //TODO musisz utworzyc GameAdmina, dodać mu Battlefieldy, Playery itp. i potem return gameAdmin;
-        return gameAdmin;
+        gameAdmin.getFirstBattlefield().createFieldList();
+        gameAdmin.getSecondBattlefield().createFieldList();
+       return gameAdmin;
     }
 
     public List<Field> getAllFields() {
@@ -33,15 +35,11 @@ public class GameService {
     }
 
     public Status shoot(String playerName, int x, int y) {
-        //TODO wywolaj to z gameAdmin
-        gameAdmin.shoot("playerName", 1,2);
-        return null;
+        return gameAdmin.shoot(playerName, 1,2);
     }
 
     public Status placeShip(String playerName, int x, int y) {
-        //TODO wywolaj to z gameAdmin
-        gameAdmin.placeShip("playerName", 1, 2);
-        return null;
+        return gameAdmin.placeShip(playerName, 1, 2);
     }
     public boolean checkIfPlayerNameAlreadyExists(String posPlayerName) {
         // return posPlayerName == null || posPlayerName.equals(gameAdmin.getFirstPlayer().getName()) || posPlayerName.equals(gameAdmin.getSecondPlayer().getName());
