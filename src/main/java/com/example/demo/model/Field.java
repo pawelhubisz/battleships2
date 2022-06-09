@@ -1,11 +1,22 @@
 package com.example.demo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Field {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long fieldId;
     private int x;
     private int y;
     private boolean isShipPlaced;
     private boolean isShot;
 
+    public Field() {
+    }
 
     public Field(int x, int y) {
         this.x = x;
@@ -48,5 +59,13 @@ public class Field {
 
     public void setShot(boolean shot) {
         isShot = shot;
+    }
+
+    public Long getFieldId() {
+        return fieldId;
+    }
+
+    public void setFieldId(Long fieldId) {
+        this.fieldId = fieldId;
     }
 }
