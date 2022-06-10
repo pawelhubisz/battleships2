@@ -29,10 +29,10 @@ public class GameService {
         gameAdmin.getSecondBattlefield().createFieldList();
 
         //TODO save to database
-        //1. Field -> Battlefield
-        //2. FieldRepository -> BattlefieldRepository
-        //3. FieldService -> BattlefieldService
-        //4. FieldServiceImpl -> BattlefieldServiceImpl
+        //1. Field -> Player
+        //2. FieldRepository -> PlayerRepository
+        //3. FieldService -> PlayerService
+        //4. FieldServiceImpl -> PlayerServiceImpl
         //https://www.geeksforgeeks.org/spring-boot-h2-database/
         //5. DeleteById / DeleteAll
        return gameAdmin;

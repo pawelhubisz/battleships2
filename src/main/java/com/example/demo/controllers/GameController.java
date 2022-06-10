@@ -53,7 +53,6 @@ public class GameController {
     }
 
     private ResponseEntity createSuccessResponse(String body) {
-        //TODO zmień HttpStatus.OK na coś innego (np. HttpStatus.BAD_REQUEST) i sprawdź co pokazuje Postman - tak samo dla innych wartości
         return new ResponseEntity(body, HttpStatus.OK);
     }
 }
